@@ -16,8 +16,16 @@ public class Loteria {
             int num = capNum(in,i);
             while (num == -1){
                 num = capNum(in, i);
+                for (int j = 0; j < i; j++) {
+                    if (valores[j] == num){
+                        num = -1;
+                        break;
+                    }
+                }
             }
+            valores[i] = num;
         }
+        imprimeVetor(valores);
     }
     
     public static int capNum (Scanner in, int i){
