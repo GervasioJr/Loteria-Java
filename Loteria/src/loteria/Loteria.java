@@ -25,6 +25,7 @@ public class Loteria {
             valores[i] = num;
         }
         imprimeVetor(valores);
+        
         Random r = new Random();
 
         int[] bolas = new int[]{0, 0, 0, 0, 0, 0};
@@ -44,6 +45,25 @@ public class Loteria {
         }
         imprimeVetor(bolas);
 
+        
+        int[] acertos = new int[6];
+        int contador = 0;
+        for (int i = 0; i < 6; i++) {
+            for (int j = 0; j < 6; j++) {
+                if (valores[i] == bolas[j]){
+                    acertos[i] = bolas[j];
+                    contador++;
+                }
+            }
+        }
+        
+        System.out.println("Você teve um total de "+contador+" acertos.");
+        if (contador >0) {
+            System.out.println("Números acertados:");
+            imprimeVetor(acertos);
+        }
+        
+        
     }
 
     public static int capNum(Scanner in, int i) {
